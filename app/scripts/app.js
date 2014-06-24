@@ -40,9 +40,9 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/add', {
+        templateUrl: 'views/newcontact.html',
+        controller: 'NewcontactCtrl'
       })
       .otherwise({
         redirectTo: '/'
