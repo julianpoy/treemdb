@@ -15,3 +15,12 @@ angular.module('treeMdbApp')
       'Karma'
     ];
   });
+
+function pollController($scope, Contact) {
+
+    $scope.saveEntry = function() {
+        var newcontact = new Contact();
+        newcontact.name = $scope.poll.name;
+        newcontact.$save();        
+    }
+}
