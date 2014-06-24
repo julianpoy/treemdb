@@ -1,5 +1,7 @@
 'use strict';
 
+var apiBase = 'http://localhost:3000/';
+
 /**
  * @ngdoc overview
  * @name treeMdbApp
@@ -17,6 +19,21 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        //Reset headers to avoid OPTIONS request (aka preflight)
+        $httpProvider.defaults.headers.common = {};
+        $httpProvider.defaults.headers.post = {};
+        $httpProvider.defaults.headers.put = {};
+        $httpProvider.defaults.headers.patch = {};
+    }
+  ])
+  // @if DEBUG
+  .constant('API_BASE', 'http://localhost:3000/')
+  // @else
+  .constant('API_BASE', 'https://www.kondeo.com/product/treemdb/api/')
+  // @endif
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
