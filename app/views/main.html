@@ -11,13 +11,11 @@
         <th ng-click="updateResults('email1')">H Email</th>
         <th ng-click="updateResults('phone')">H Phone</th>
       </tr>
-      <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('/profile?id={{contact.id}}')">
-      <a href="test">
+      <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('#/contact?id={{contact.id}}')">
         <td class="first">{{contact.id}}</td>
         <td>{{contact.name}}</td>
         <td>{{contact.hemail}}</td>
         <td>{{contact.hphone}}</td>
-        </a>
       </tr>
     </table>
   </div>

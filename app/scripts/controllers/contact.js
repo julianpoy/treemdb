@@ -15,6 +15,16 @@ angular.module('treeMdbApp')
       'Karma'
     ];
     
-
+    var reqid = getUrlVars()["id"];
+    $scope.contact = Contact.get({ "Id": reqid });
 
   });
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+

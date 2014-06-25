@@ -18,6 +18,7 @@ angular.module('treeMdbApp')
     //$scope.contacts = Contact.get({Id: 2});
     $scope.go = function(requrl){
         console.log("url switch for " + requrl);
+        window.location.href = requrl;
     }
   });
 
