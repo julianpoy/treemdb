@@ -1,23 +1,24 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div>
+  <div ng-controller="ContactsDisplayCtrl">
+    <h2>Search:</h2>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+    <input ng-model="searchText" class="main-searchfield">
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+    <table cellspacing="0">
+      <tr class="first">
+        <th class="first" ng-click="changeSorting('id')">ID</th>
+        <th ng-click="updateResults('name')">Name</th>
+        <th ng-click="updateResults('email1')">H Email</th>
+        <th ng-click="updateResults('phone')">H Phone</th>
+      </tr>
+      <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('/profile?id={{contact.id}}')">
+      <a href="test">
+        <td class="first">{{contact.id}}</td>
+        <td>{{contact.name}}</td>
+        <td>{{contact.hemail}}</td>
+        <td>{{contact.hphone}}</td>
+        </a>
+      </tr>
+    </table>
+  </div>
 </div>
