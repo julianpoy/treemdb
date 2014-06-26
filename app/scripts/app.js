@@ -44,6 +44,10 @@ angular
         templateUrl: 'views/newcontact.html',
         controller: 'NewcontactCtrl'
       })
+      .when('/edit', {
+        templateUrl: 'views/editcontact.html',
+        controller: 'EditcontactCtrl'
+      })
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
