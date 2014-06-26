@@ -1,6 +1,9 @@
 <h1>Contact Profile</h1>
 <div class="well">
-    <button ng-click="go('#/edit?id={{contact.id}}')" class="btn float-right">Edit</button>
+    <div class="float-right">
+        <button ng-click="go('#/delete?id={{urlvars.id}}')" class="btn float-right profile-deletebutton">Delete</button>
+        <button ng-click="go('#/edit?id={{urlvars.id}}')" class="btn float-right profile-editbutton">Edit</button>
+    </div>
     <h3 class="nomargin">
         {{contact.Prefix}} {{contact.FirstName}} {{contact.LastName}} 
         <label ng-if="contact.Title != ''">-</label> 

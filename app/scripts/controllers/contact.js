@@ -21,6 +21,7 @@ angular.module('treeMdbApp')
     }
     
     var urlvars = $location.search();
+    $scope.urlvars = urlvars;
     $scope.contact = Contact.get({ "Id": urlvars.id });
 
   });
