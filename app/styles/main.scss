@@ -22,10 +22,6 @@ th, td {
   padding-right: 8px;
 }
 
-.main-searchfield {
-  margin-bottom: 15px;
-}
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -101,19 +97,26 @@ th, td {
   }
 }
 
-.profile-editbutton {
-  
-}
-.profile-deletebutton {
-  margin-left: 5px;
-}
-
 .float-right {
   float: right;
 }
 
 .nomargin {
   margin: 0px;
+}
+
+.main-searchfield {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.profile-editbutton {
+  
+}
+.profile-deletebutton {
+  margin-left: 5px;
 }
 
 .edit-textarea {
