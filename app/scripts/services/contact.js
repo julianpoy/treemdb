@@ -22,7 +22,7 @@ angular.module('treeMdbApp')
             },
             update: { 
                 method: 'PUT', 
-                params: {}, 
+                params: { Id: '@id' }, 
                 isArray: false 
             },
             delete: { 

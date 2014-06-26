@@ -115,3 +115,22 @@ th, td {
 .nomargin {
   margin: 0px;
 }
+
+.edit-textarea {
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.edit-input {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.edit-button {
+  margin-bottom: 10px;
+}
