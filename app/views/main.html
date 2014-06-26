@@ -1,22 +1,50 @@
 <div>
   <div ng-controller="ContactsDisplayCtrl">
-    <h2>Search:</h2>
+    <h2>Search The Database</h2>
+    <div class="well">
+      <form class="form-search">
+        <label>Initial Coarse Search:</label>
+        <br />
+        <input type="text" ng-model="FirstName" class="input-medium search-query" placeholder="First Name...">
+        <input type="text" ng-model="LastName" class="input-medium search-query" placeholder="Last Name...">
+        <input type="text" ng-model="Address1" class="input-medium search-query" placeholder="Address 1...">
+        <br />
+        <input type="text" ng-model="Email1" class="input-medium search-query" placeholder="Email 1...">
+        <input type="text" ng-model="Phone1" class="input-medium search-query" placeholder="Phone 1...">
+        <input type="text" ng-model="City" class="input-medium search-query" placeholder="City...">
+        <br />
 
-    <input ng-model="searchText" class="main-searchfield">
+        <button type="submit" class="btn" ng-click="search()">Search</button>
+      </form>
+      <br />
 
-    <table cellspacing="0">
-      <tr class="first">
-        <th class="first" ng-click="changeSorting('id')">ID</th>
-        <th ng-click="updateResults('name')">Name</th>
-        <th ng-click="updateResults('email1')">H Email</th>
-        <th ng-click="updateResults('phone')">H Phone</th>
-      </tr>
-      <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('#/contact?id={{contact.id}}')">
-        <td class="first">{{contact.id}}</td>
-        <td>{{contact.name}}</td>
-        <td>{{contact.hemail}}</td>
-        <td>{{contact.hphone}}</td>
-      </tr>
-    </table>
+      <label>Fine Search:</label>
+      <br />
+      <input ng-model="searchText" class="main-searchfield">
+    </div>
+
+    
+  
+    
+
+    <div class="well">
+      <h4>Search Results:</h4>
+      <table cellspacing="0">
+        <tr class="first">
+          <th class="first" ng-click="changeSorting('id')">ID &#x25BC;</th>
+          <th ng-click="changeSorting('LastName')">First Name &#x25BC;</th>
+          <th ng-click="changeSorting('LastName')">Last Name &#x25BC;</th>
+          <th ng-click="updateResults('email1')">H Email &#x25BC;</th>
+          <th ng-click="updateResults('phone')">H Phone &#x25BC;</th>
+        </tr>
+        <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('#/contact?id={{contact.id}}')">
+          <td class="first">{{contact.id}}</td>
+          <td>{{contact.FirstName}}</td>
+          <td>{{contact.LastName}}</td>
+          <td>{{contact.hemail}}</td>
+          <td>{{contact.hphone}} &#8641;</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>

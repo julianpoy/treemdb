@@ -38,10 +38,10 @@ angular.module('treeMdbApp')
 angular.module('treeMdbApp')
   .factory('ContactSearch', ['$resource', function($resource) {
 
-    return $resource( apiBase + 'contacts/search/:query', 
-        { userId: '@userId' }, { 
+    return $resource( apiBase + 'contacts/search', 
+        {}, { 
             search: { 
-                method: 'GET', 
+                method: 'POST', 
                 params: {}, 
                 isArray: false 
             }            
