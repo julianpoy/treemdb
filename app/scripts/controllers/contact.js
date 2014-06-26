@@ -8,16 +8,15 @@
  * Controller of the treeMdbApp
  */
 angular.module('treeMdbApp')
-  .controller('ContactCtrl', function ($scope, Contact, API_BASE) {
+  .controller('ContactCtrl', function ($scope, Contact, API_BASE, $location, $rootElement) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
     
-    var reqid = getQueryVariable("id");
-    alert(reqid);
-    $scope.contact = Contact.get({ "Id": reqid });
+    var urlvars = $location.search();
+    $scope.contact = Contact.get({ "Id": urlvars.id });
 
   });
 
