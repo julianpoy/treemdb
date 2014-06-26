@@ -14,6 +14,11 @@ angular.module('treeMdbApp')
       'AngularJS',
       'Karma'
     ];
+
+    $scope.go = function(requrl){
+        console.log("url switch for " + requrl);
+        window.location.href = requrl;
+    }
     
     var urlvars = $location.search();
     $scope.contact = Contact.get({ "Id": urlvars.id });

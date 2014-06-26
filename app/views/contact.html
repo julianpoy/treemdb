@@ -1,3 +1,30 @@
-This is the people view.
+<h1>Contact Profile</h1>
+<div class="well">
+    <button ng-click="go('#/edit?id={{contact.id}}')" class="btn float-right">Edit</button>
+    <h3 class="nomargin">
+        {{contact.Prefix}} {{contact.FirstName}} {{contact.LastName}} 
+        <label ng-if="contact.Title != ''">-</label> 
+        {{contact.Title}}
+    </h3><br /><br />
 
-{{contact}}
+    <label>Home Phone:</label> {{contact.HomePhone}} <br />
+    <label>Work Phone:</label> {{contact.WorkPhone}} <br />
+    <label>Cell Phone:</label> {{contact.CellPhone}} <br />
+    <label>Fax:</label> {{contact.Fax}} <br /> <br />
+
+    <label>Email:</label> {{contact.Email}} <br />
+    <label>Web Address:</label> {{contact.WebAddress}} <br /> <br />
+
+    <label>Address:</label>  {{contact.Address1}} {{contact.Address2}} {{contact.City}} {{contact.StateRegion}} {{contact.Zip}} {{contact.Country}} <br /> <br />
+
+    <label>Additional Info</label> - <br />
+    {{contact.AdditionalInfo}}
+    <br /> <br /> 
+
+    <label>Notes</label> - <br />
+    {{contact.Notes}}
+    <br /> <br /> 
+
+    <label>Curbside Notes</label> - <br />
+    {{contact.CurbSideNotes}}
+</div>
