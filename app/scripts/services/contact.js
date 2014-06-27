@@ -27,7 +27,7 @@ angular.module('treeMdbApp')
             },
             delete: { 
                 method: 'DELETE', 
-                params: { userId: '@Id' }, 
+                params: { Id: '@Id' }, 
                 isArray: false 
             }
             
