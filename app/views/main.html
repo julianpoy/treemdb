@@ -31,14 +31,12 @@
       <h4>Search Results:</h4>
       <table cellspacing="0">
         <tr class="first">
-          <th class="first" ng-click="changeSorting('id')">ID &#x25BC;</th>
           <th ng-click="changeSorting('LastName')">First Name &#x25BC;</th>
           <th ng-click="changeSorting('LastName')">Last Name &#x25BC;</th>
           <th ng-click="updateResults('email1')">H Email &#x25BC;</th>
           <th ng-click="updateResults('phone')">H Phone &#x25BC;</th>
         </tr>
         <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('#/contact?id={{contact.id}}')">
-          <td class="first">{{contact.id}}</td>
           <td>{{contact.FirstName}}</td>
           <td>{{contact.LastName}}</td>
           <td>{{contact.hemail}}</td>
