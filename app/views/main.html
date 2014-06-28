@@ -7,11 +7,13 @@
         <br />
         <input type="text" ng-model="FirstName" class="input-medium search-query main-searchfield" placeholder="First Name...">
         <input type="text" ng-model="LastName" class="input-medium search-query main-searchfield" placeholder="Last Name...">
+        <input type="text" ng-model="Company" class="input-medium search-query main-searchfield" placeholder="Company...">
+        <br />
         <input type="text" ng-model="Address1" class="input-medium search-query main-searchfield" placeholder="Address 1...">
+        <input type="text" ng-model="City" class="input-medium search-query main-searchfield" placeholder="City...">
         <br />
         <input type="text" ng-model="Email1" class="input-medium search-query main-searchfield" placeholder="Email 1...">
         <input type="text" ng-model="Phone1" class="input-medium search-query main-searchfield" placeholder="Phone 1...">
-        <input type="text" ng-model="City" class="input-medium search-query main-searchfield" placeholder="City...">
         <br />
 
         <button type="submit" class="btn" ng-click="search()">Search</button>
@@ -33,12 +35,14 @@
         <tr class="first">
           <th ng-click="changeSorting('LastName')">First Name &#x25BC;</th>
           <th ng-click="changeSorting('LastName')">Last Name &#x25BC;</th>
+           <th ng-click="changeSorting('Company')">Company &#x25BC;</th>
           <th ng-click="updateResults('email1')">H Email &#x25BC;</th>
           <th ng-click="updateResults('phone')">H Phone &#x25BC;</th>
         </tr>
         <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('#/contact?id={{contact.id}}')">
           <td>{{contact.FirstName}}</td>
           <td>{{contact.LastName}}</td>
+          <td>{{contact.Company}}</td>
           <td>{{contact.hemail}}</td>
           <td>{{contact.hphone}} &#8641;</td>
         </tr>

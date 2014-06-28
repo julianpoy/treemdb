@@ -31,6 +31,7 @@ function ContactsDisplayCtrl($scope, Contact, ContactSearch, API_BASE){
     } else {
         $scope.FirstName = $scope.urlvars.FirstName;
         $scope.LastName = $scope.urlvars.LastName;
+        $scope.Company = $scope.urlvars.Company;
         $scope.Address1 = $scope.urlvars.Address1;
         $scope.Email1 = $scope.urlvars.Email1;
         $scope.Phone1 = $scope.urlvars.Phone1;
@@ -70,6 +71,11 @@ function ContactsDisplayCtrl($scope, Contact, ContactSearch, API_BASE){
         } else {
             var LastName = $scope.LastName;
         }
+        if(!$scope.Company){
+            var Company = "";
+        } else {
+            var Company = $scope.Company;
+        }
         if(!$scope.Address1){
             var Address1 = "";
         } else {
@@ -91,9 +97,9 @@ function ContactsDisplayCtrl($scope, Contact, ContactSearch, API_BASE){
             var City = $scope.City;
         }
 
-        if ($scope.FirstName || $scope.LastName || $scope.Address1 || $scope.Email1 || $scope.Phone1 || $scope.City){
+        if ($scope.FirstName || $scope.LastName || $scope.Company || $scope.Address1 || $scope.Email1 || $scope.Phone1 || $scope.City){
             var RandomRefresh = Math.random();;
-            var searchJSON = { "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City, "Random": RandomRefresh }
+            var searchJSON = { "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Company": Company, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City, "Random": RandomRefresh }
 
             $scope.go("/#/" + obj_to_query(searchJSON))
             //$scope.contacts = ContactSearch.search({ "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City });

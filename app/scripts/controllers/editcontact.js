@@ -21,7 +21,7 @@ angular.module('treeMdbApp')
 
   });
 
-function Controller($scope, Contact) {
+function Controller66($scope, Contact) {
     $scope.contact = Contact.get({ "Id": $scope.urlvars.id });
     $scope.master = $scope.contact;
     $scope.user = $scope.contact;
