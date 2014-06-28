@@ -1,1 +1,36 @@
-<p>This is the newcontact view.</p>
+<div ng-controller="NewContactController">
+  <form novalidate class="simple-form">
+    <div class="well">
+        <label>Prefix:</label> <input type="text" ng-model="user.Prefix" class="edit-input" /><br />
+        <label>First Name:</label> <input type="text" ng-model="user.FirstName" class="edit-input" /><br />
+        <label>Last Name:</label> <input type="text" ng-model="user.LastName" class="edit-input" /><br />
+        <label>Title:</label> <input type="text" ng-model="user.Title" class="edit-input" /><br />
+        <label>Home Phone:</label> <input type="text" ng-model="user.HomePhone" class="edit-input" /><br />
+        <label>Work Phone:</label> <input type="text" ng-model="user.WorkPhone" class="edit-input" /><br />
+        <label>Cell Phone:</label> <input type="text" ng-model="user.CellPhone" class="edit-input" /><br />
+        <label>Fax:</label> <input type="text" ng-model="user.Fax" class="edit-input" /><br />
+        <label>Email:</label> <input type="text" ng-model="user.Email" class="edit-input" /><br />
+        <label>Web Address:</label> <input type="text" ng-model="user.WebAddress" class="edit-input" /><br />
+        <label>Address 1:</label> <input type="text" ng-model="user.Address1" class="edit-input" /><br />
+        <label>Address 2:</label> <input type="text" ng-model="user.Address2" class="edit-input" /><br />
+        <label>City:</label> <input type="text" ng-model="user.City" class="edit-input" /><br />
+        <label>State/Region:</label> <input type="text" ng-model="user.StateRegion" class="edit-input" /><br />
+        <label>Zip/Postalcode:</label> <input type="text" ng-model="user.Zip" class="edit-input" /><br />
+        <label>Country:</label> <input type="text" ng-model="user.Country" class="edit-input" /><br />
+    </div>
+    <div class="well">
+        <label>Additional Info</label> - <br />
+        <textarea type="text" ng-model="user.AdditionalInfo" class="edit-textarea"></textarea>
+    </div>
+    <div class="well">
+        <label>Notes</label> - <br />
+        <textarea type="text" ng-model="user.Notes" class="edit-textarea"></textarea>
+    </div>
+    <div class="well">
+        <label>Curbside Notes</label> - <br />
+        <textarea type="text" ng-model="user.CurbSideNotes" class="edit-textarea"></textarea>
+    </div>
+
+    <button ng-click="add(user)" class="btn edit-button">Add Contact</button>
+  </form>
+</div>

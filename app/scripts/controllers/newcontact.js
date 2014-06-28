@@ -8,19 +8,26 @@
  * Controller of the treeMdbApp
  */
 angular.module('treeMdbApp')
-  .controller('NewcontactCtrl', function ($scope) {
+  .controller('NewcontactCtrl', function ($scope, Contact, API_BASE, $location, $rootElement) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    $scope.go = function(requrl){
+        console.log("url switch for " + requrl);
+        window.location.href = requrl;
+    }
+
   });
 
-function pollController($scope, Contact) {
+function NewContactController($scope, Contact) {
 
-    $scope.saveEntry = function() {
-        var newcontact = new Contact();
-        newcontact.name = $scope.poll.name;
-        newcontact.$save();        
+    $scope.add = function(user) {
+      $scope.result = Contact.save(user, function(){
+        alert("Contact added to the database successfully.");
+        $scope.go("/#/contact?id=" + $scope.result.id)
+      });
     }
 }
