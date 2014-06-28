@@ -43,7 +43,7 @@ function ContactsDisplayCtrl($scope, Contact, ContactSearch, API_BASE){
         column: '',
         descending: false
     };    
-    $scope.limitquantity = 30;
+    $scope.limitquantity = 100;
     $scope.changeSorting = function(column) {
 
         var sort = $scope.sort;
