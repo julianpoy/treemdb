@@ -31,8 +31,8 @@ function Controller($scope, Contact) {
   $scope.delete = function() {
     $scope.results = Contact.delete({ "Id": $scope.urlvars.id });
     if(!($scope.results.length > 0)){
-      alert("Contact was deleted!");
-      $scope.go("/#/");
+      alert("Contact was deleted! The browser will now navigate back to your original search.");
+      window.history.go(-2);
     } else {
       alert("There was a problem deleting the contact you selected from the database. Please contact the developer.");
     }
