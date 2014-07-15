@@ -1,4 +1,4 @@
-// Generated on 2014-06-20 using generator-angular 0.9.0-0
+// Generated on 2014-07-02 using generator-angular 0.9.0-0
 'use strict';
 
 // # Globbing
@@ -209,7 +209,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglifyjs'],
+              js: ['concat'],
               css: ['cssmin']
             },
             post: {}
@@ -414,7 +414,6 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'cssmin',
-    'uglify',
     'filerev',
     'usemin',
     'htmlmin'
