@@ -8,7 +8,7 @@
  * Controller of the treeMdbApp
  */
 angular.module('treeMdbApp')
-  .controller('ContactCtrl', function ($scope, Contact, API_BASE, $location, $rootElement) {
+  .controller('ContactCtrl', function ($scope, Contact, Donations, API_BASE, $location, $rootElement) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -23,7 +23,24 @@ angular.module('treeMdbApp')
     var urlvars = $location.search();
     $scope.urlvars = urlvars;
     $scope.contact = Contact.get({ "Id": urlvars.id });
+    $scope.donations = Donations.get({ "Id": urlvars.id });
 
+    $scope.newdonation = function(){
+      var fulldate = $scope.newdonation.year + "-" + $scope.newdonation.month + "-" + $scope.newdonation.day;
+
+      var savedonation = { "Date": fulldate, "Amount": $scope.newdonation.amount, "Contact_id": urlvars.id };
+
+      Donations.save(savedonation);
+      location.reload();
+    }
+
+    $scope.deletedonation = function(donationamt, donationid){
+      if (confirm('You are about to delete a donation record for $' + donationamt)) {
+        Donations.delete({ "Id": donationid }, function(){ location.reload(); });
+      } else {
+        // Do nothing!
+      }
+    }
   });
 
 function getQueryVariable(variable)

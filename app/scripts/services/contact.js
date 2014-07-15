@@ -48,3 +48,28 @@ angular.module('treeMdbApp')
         } );
 
 }]);
+
+angular.module('treeMdbApp')
+  .factory('Donations', ['$resource', function($resource) {
+
+    return $resource( apiBase + 'donations/:Id', 
+        { Id: '@Id' }, { 
+            get: { 
+                method: 'GET', 
+                params: { Id: '@Id' }, 
+                isArray: false 
+            },
+            save: { 
+                method: 'POST', 
+                params: {},
+                isArray: false 
+            },
+            delete: { 
+                method: 'DELETE', 
+                params: { Id: '@Id' }, 
+                isArray: false 
+            }
+            
+        } );
+
+}]);

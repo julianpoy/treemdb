@@ -33,3 +33,30 @@
     <label>Curbside Notes</label> - <br />
     {{contact.CurbSideNotes}}
 </div>
+<div class="well">
+    New:<br />
+    Date <label>2015-08-25</label> -
+
+    <input type="text" ng-model="newdonation.year" class="input-medium search-query profile-datefield-year" placeholder="4 Digit Year"> <strong>-</strong>
+
+    <input type="text" ng-model="newdonation.month" class="input-medium search-query profile-datefield" placeholder="Month"> <strong>-</strong>
+
+    <input type="text" ng-model="newdonation.day" class="input-medium search-query profile-datefield" placeholder="Day"> 
+
+    <input type="text" ng-model="newdonation.amount" class="input-medium search-query profile-amountfield" placeholder="Amount Without $">
+
+    <button type="submit" class="btn" ng-click="newdonation()">Add</button>
+
+    <table cellspacing="0">
+        <tr class="first">
+          <th>Date &#x25BC;</th>
+          <th>Amount &#x25BC;</th>
+          <th>Delete &#x25BC;</th>
+        </tr>
+        <tr ng-repeat="donation in donations.donations" >
+          <td>{{donation.Date}}</td>
+          <td>{{donation.Amount}}</td>
+          <td ng-click="deletedonation('{{donation.Amount}}', '{{donation.id}}')"><img src="http://icons.iconarchive.com/icons/visualpharm/icons8-metro-style/512/Editing-Delete-icon.png" style="max-height: 12px;" /></td>
+        </tr>
+      </table>
+</div>

@@ -115,8 +115,32 @@ th, td {
 .profile-editbutton {
   
 }
+
 .profile-deletebutton {
   margin-left: 5px;
+}
+
+.profile-datefield {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  max-width: 50px;
+}
+
+.profile-datefield-year {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  max-width: 100px;
+}
+
+.profile-amountfield {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
 }
 
 .edit-textarea {
