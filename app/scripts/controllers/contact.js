@@ -22,7 +22,10 @@ angular.module('treeMdbApp')
     
     var urlvars = $location.search();
     $scope.urlvars = urlvars;
-    $scope.contact = Contact.get({ "Id": urlvars.id });
+    $scope.contact = Contact.get({ "Id": urlvars.id }, function(){
+      var contactDateTime = $scope.contact.Date;
+      $scope.contactDate = contactDateTime.replace("00:00:00", "");
+    });
     $scope.donations = Donations.get({ "Id": urlvars.id });
 
     $scope.newdonation = function(){
