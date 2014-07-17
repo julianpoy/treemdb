@@ -1,6 +1,7 @@
 'use strict';
 
 var apiBase = 'http://' + window.location.hostname + '/api/';
+//var apiBase = 'http://192.168.1.4/api/';
 
 /**
  * @ngdoc overview
