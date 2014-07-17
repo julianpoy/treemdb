@@ -1,6 +1,6 @@
 'use strict';
 
-var apiBase = 'http://localhost.:3000/';
+var apiBase = 'http://' + window.location.hostname + '/api/';
 
 /**
  * @ngdoc overview
