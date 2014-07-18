@@ -60,8 +60,15 @@ angular.module('treeMdbApp')
         } else {
             var City = $scope.City;
         }
+        //Absolute search, no fuzzy
+        if(!$scope.City){
+            var City = "";
+        } else {
+            var City = $scope.City;
+        }
+
         //Flags
-        
+
 
         if ($scope.FirstName || $scope.LastName || $scope.Company || $scope.Address1 || $scope.Email1 || $scope.Phone1 || $scope.City){
             var RandomRefresh = Math.random();;
