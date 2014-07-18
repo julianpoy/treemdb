@@ -1,0 +1,37 @@
+<h2>Search The Database - Advanced</h2>
+    <div class="well">
+      <form class="form-search">
+        <label>Parameters:</label>
+        <br />
+        <input type="text" ng-model="FirstName" class="input-medium search-query main-searchfield" placeholder="First Name...">
+        <input type="text" ng-model="LastName" class="input-medium search-query main-searchfield" placeholder="Last Name...">
+        <input type="text" ng-model="Company" class="input-medium search-query main-searchfield" placeholder="Company...">
+        <br />
+        <input type="text" ng-model="Address1" class="input-medium search-query main-searchfield" placeholder="Address 1...">
+        <input type="text" ng-model="City" class="input-medium search-query main-searchfield" placeholder="City...">
+        <br />
+        <input type="text" ng-model="Email1" class="input-medium search-query main-searchfield" placeholder="Email 1...">
+        <input type="text" ng-model="Phone1" class="input-medium search-query main-searchfield" placeholder="Phone 1...">
+        <br />
+        <input type="checkbox" ng-model="user.YouthDirector" ng-true-value="1" ng-false-value="0"/> <label>Match fields exactly</label>
+        <br /><br />
+
+        <label>Flags -</label><br />
+        <input type="checkbox" ng-model="user.YMT" ng-true-value="1" ng-false-value="0"/> <label>YMT</label> |
+        <input type="checkbox" ng-model="user.YouthDirector" ng-true-value="1" ng-false-value="0"/> <label>Youth Director</label> |
+        <input type="checkbox" ng-model="user.Board" ng-true-value="1" ng-false-value="0"/> <label>Board</label> <br />
+        <input type="checkbox" ng-model="user.APT" ng-true-value="1" ng-false-value="0"/> <label>APT</label> |
+        <input type="checkbox" ng-model="user.TreeGuardian" ng-true-value="1" ng-false-value="0"/> <label>Tree Guardian</label> |
+        <input type="checkbox" ng-model="user.FosterCare" ng-true-value="1" ng-false-value="0"/> <label>Foster Care</label> <br />
+        <input type="checkbox" ng-model="user.Volunteer" ng-true-value="1" ng-false-value="0"/> <label>Volunteer</label> |
+        <input type="checkbox" ng-model="user.Small" ng-true-value="1" ng-false-value="0"/> <label>Small</label> |
+        <input type="checkbox" ng-model="user.Tall" ng-true-value="1" ng-false-value="0"/> <label>Tall</label> <br />
+
+        <button type="submit" class="btn" ng-click="search()">Search</button>
+      </form>
+      <br />
+
+      <label>Fine Search:</label>
+      <br />
+      <input ng-model="searchText" class="main-searchfield">
+    </div>

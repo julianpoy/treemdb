@@ -53,6 +53,10 @@ angular
         templateUrl: 'views/deletecontact.html',
         controller: 'DeletecontactCtrl'
       })
+      .when('/advsearch', {
+        templateUrl: 'views/advancedsearch.html',
+        controller: 'AdvancedSearchCtrl'
+      })
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
