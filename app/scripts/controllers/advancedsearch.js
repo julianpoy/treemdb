@@ -20,61 +20,63 @@ angular.module('treeMdbApp')
         window.location.href = requrl;
     }
 
+    $scope.user = {};
+    $scope.user.Absolute = "0";
+
     $scope.search = function() {
+
+      var search = {};
 
         // Create the http post request
         // the data holds the keywords
         // The request is a JSON request.
         if(!$scope.FirstName){
-            var FirstName = "";
+            search.FirstName = "";
         } else {
-            var FirstName = $scope.FirstName;
+            search.FirstName = $scope.FirstName;
         }
         if(!$scope.LastName){
-            var LastName = "";
+            search.LastName = "";
         } else {
-            var LastName = $scope.LastName;
+            search.LastName = $scope.LastName;
         }
         if(!$scope.Company){
-            var Company = "";
+            search.Company = "";
         } else {
-            var Company = $scope.Company;
+            search.Company = $scope.Company;
         }
         if(!$scope.Address1){
-            var Address1 = "";
+            search.Address1 = "";
         } else {
-            var Address1 = $scope.Address1;
+            search.Address1 = $scope.Address1;
         }
         if(!$scope.Email1){
-            var Email1 = "";
+            search.Email1 = "";
         } else {
-            var Email1 = $scope.Email1;
+            search.Email1 = $scope.Email1;
         }
         if(!$scope.Phone1){
-            var Phone1 = "";
+            search.Phone1 = "";
         } else {
-            var Phone1 = $scope.Phone1;
+            search.Phone1 = $scope.Phone1;
         }
         if(!$scope.City){
-            var City = "";
+            search.City = "";
         } else {
-            var City = $scope.City;
+            search.City = $scope.City;
         }
+
         //Absolute search, no fuzzy
-        if(!$scope.City){
-            var City = "";
-        } else {
-            var City = $scope.City;
-        }
+        search.Absolute = $scope.user.Absolute;
 
         //Flags
 
-
+        search.query = "submitq";
         if ($scope.FirstName || $scope.LastName || $scope.Company || $scope.Address1 || $scope.Email1 || $scope.Phone1 || $scope.City){
-            var RandomRefresh = Math.random();;
-            var searchJSON = { "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Company": Company, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City, "Random": RandomRefresh }
+            search.Random = Math.random();
+            var searchJSON = search;
 
-            $scope.go("/#/" + obj_to_query(searchJSON))
+            $scope.go("/#/" + obj_to_query(searchJSON));
             //$scope.contacts = ContactSearch.search({ "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City });
         }
 
