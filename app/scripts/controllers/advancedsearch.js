@@ -22,6 +22,15 @@ angular.module('treeMdbApp')
 
     $scope.user = {};
     $scope.user.Absolute = "0";
+    $scope.user.YMT = "";
+    $scope.user.YouthDirector = "";
+    $scope.user.Board = "";
+    $scope.user.APT = "";
+    $scope.user.TreeGuardian = "";
+    $scope.user.FosterCare = "";
+    $scope.user.Volunteer = "";
+    $scope.user.Small = "";
+    $scope.user.Tall = "";
 
     $scope.search = function() {
 
@@ -70,6 +79,15 @@ angular.module('treeMdbApp')
         search.Absolute = $scope.user.Absolute;
 
         //Flags
+        search.YMT = $scope.user.YMT;
+        search.YouthDirector = $scope.user.YouthDirector;
+        search.Board = $scope.user.Board;
+        search.APT = $scope.user.APT;
+        search.TreeGuardian = $scope.user.TreeGuardian;
+        search.FosterCare = $scope.user.FosterCare;
+        search.Volunteer = $scope.user.Volunteer;
+        search.Small = $scope.user.Small;
+        search.Tall = $scope.user.Tall;
 
         search.query = "submitq";
         if ($scope.FirstName || $scope.LastName || $scope.Company || $scope.Address1 || $scope.Email1 || $scope.Phone1 || $scope.City){
