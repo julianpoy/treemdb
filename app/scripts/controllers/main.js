@@ -20,7 +20,7 @@ angular.module('treeMdbApp')
     
     $scope.go = function(requrl){
         console.log("url switch for " + requrl);
-        window.location.href = requrl;
+        $location.url(requrl);
     }
   });
 
@@ -101,7 +101,7 @@ function ContactsDisplayCtrl($scope, Contact, ContactSearch, API_BASE){
             var RandomRefresh = Math.random();;
             var searchJSON = { "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Company": Company, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City, "Random": RandomRefresh }
 
-            $scope.go("/#/" + obj_to_query(searchJSON))
+            $scope.go("/" + obj_to_query(searchJSON))
             //$scope.contacts = ContactSearch.search({ "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City });
         }
     };   

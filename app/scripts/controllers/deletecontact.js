@@ -17,7 +17,7 @@ angular.module('treeMdbApp')
 
     $scope.go = function(requrl){
         console.log("url switch for " + requrl);
-        window.location.href = requrl;
+        $location.url(requrl);
     }
     
     var urlvars = $location.search();

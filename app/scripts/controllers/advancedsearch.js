@@ -17,7 +17,7 @@ angular.module('treeMdbApp')
 
     $scope.go = function(requrl){
         console.log("url switch for " + requrl);
-        window.location.href = requrl;
+        $location.url(requrl);
     }
 
     $scope.user = {};
@@ -94,7 +94,7 @@ angular.module('treeMdbApp')
             search.Random = Math.random();
             var searchJSON = search;
 
-            $scope.go("/#/" + obj_to_query(searchJSON));
+            $scope.go("/" + obj_to_query(searchJSON));
             //$scope.contacts = ContactSearch.search({ "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City });
         }
 

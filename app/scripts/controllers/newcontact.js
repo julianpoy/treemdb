@@ -17,7 +17,7 @@ angular.module('treeMdbApp')
 
     $scope.go = function(requrl){
         console.log("url switch for " + requrl);
-        window.location.href = requrl;
+        $location.url(requrl);
     }
 
   });
@@ -28,7 +28,7 @@ function NewContactController($scope, Contact) {
 
       $scope.result = Contact.save(user, function(){
         alert("Contact added to the database successfully.");
-        $scope.go("/#/contact?id=" + $scope.result.id)
+        $scope.go("/contact?id=" + $scope.result.id)
       });
     }
 }

@@ -39,7 +39,7 @@
           <th ng-click="updateResults('email1')">H Email &#x25BC;</th>
           <th ng-click="updateResults('phone')">H Phone &#x25BC;</th>
         </tr>
-        <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('#/contact?id={{contact.id}}')">
+        <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('/contact?id={{contact.id}}')">
           <td>{{contact.FirstName}}</td>
           <td>{{contact.LastName}}</td>
           <td>{{contact.Company}}</td>
