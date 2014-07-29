@@ -1,8 +1,8 @@
 <h1>Contact Profile</h1>
 <div class="well">
     <div class="float-right">
-        <button ng-click="go('#/delete?id={{urlvars.id}}')" class="btn float-right profile-deletebutton">Delete</button>
-        <button ng-click="go('#/edit?id={{urlvars.id}}')" class="btn float-right profile-editbutton">Edit</button>
+        <button ng-click="go('/delete?id={{urlvars.id}}')" class="btn float-right profile-deletebutton">Delete</button>
+        <button ng-click="go('/edit?id={{urlvars.id}}')" class="btn float-right profile-editbutton">Edit</button>
     </div>
     <h3 class="nomargin">
         {{contact.Prefix}} {{contact.FirstName}} {{contact.LastName}} 
