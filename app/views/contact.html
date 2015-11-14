@@ -5,10 +5,10 @@
         <button ng-click="go('/edit?id={{urlvars.id}}')" class="btn float-right profile-editbutton">Edit</button>
     </div>
     <h3 class="nomargin">
-        {{contact.Prefix}} {{contact.FirstName}} {{contact.LastName}} 
-        <label ng-if="contact.Title != ''">-</label> 
+        {{contact.Prefix}} {{contact.FirstName}} {{contact.LastName}}
+        <label ng-if="contact.Title != ''">-</label>
         {{contact.Title}}
-        <label ng-if="contact.Company != ''">-</label> 
+        <label ng-if="contact.Company != ''">-</label>
         {{contact.Company}}
     </h3><br /><br />
     <label>Last Modified (Y-M-D):</label> {{contactDate}}
@@ -29,11 +29,11 @@
 
     <label>Additional Info</label> - <br />
     {{contact.AdditionalInfo}}
-    <br /> <br /> 
+    <br /> <br />
 
     <label>Notes</label> - <br />
     {{contact.Notes}}
-    <br /> <br /> 
+    <br /> <br />
 
     <label>Curbside Notes</label> - <br />
     {{contact.CurbSideNotes}}
@@ -60,7 +60,7 @@
 
     <input type="text" ng-model="newdonation.month" class="input-medium search-query profile-datefield" placeholder="Month"> <strong>-</strong>
 
-    <input type="text" ng-model="newdonation.day" class="input-medium search-query profile-datefield" placeholder="Day"> 
+    <input type="text" ng-model="newdonation.day" class="input-medium search-query profile-datefield" placeholder="Day">
 
     <input type="text" ng-model="newdonation.amount" class="input-medium search-query profile-amountfield" placeholder="Amount Without $">
 
@@ -75,7 +75,7 @@
         <tr ng-repeat="donation in donations.donations" >
           <td>{{donation.Date}}</td>
           <td>{{donation.Amount}}</td>
-          <td ng-click="deletedonation('{{donation.Amount}}', '{{donation.id}}')"><img src="http://icons.iconarchive.com/icons/visualpharm/icons8-metro-style/512/Editing-Delete-icon.png" style="max-height: 12px;" /></td>
+          <td ng-click="deletedonation('{{donation.Amount}}', '{{donation.id}}')"><img src="http://findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png" style="max-height: 12px;" /></td>
         </tr>
       </table>
 </div>
