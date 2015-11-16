@@ -8,7 +8,7 @@
  * Controller of the treeMdbApp
  */
 angular.module('treeMdbApp')
-  .controller('AdvancedSearchCtrl', function ($scope, API_BASE, $location, $rootElement) {
+  .controller('AdvancedSearchCtrl', function ($scope, API_BASE, $location, $rootElement, ContactSearch, Contact) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -58,6 +58,11 @@ angular.module('treeMdbApp')
 
         $scope.contacts = ContactSearch.search($scope.urlvars);
     }
+    $scope.sort = {
+        column: '',
+        descending: false
+    };
+    $scope.limitquantity = 100;
 
     $scope.search = function() {
 
@@ -87,14 +92,14 @@ angular.module('treeMdbApp')
             search.Address1 = $scope.Address1;
         }
         if(!$scope.Email1){
-            search.Email1 = "";
+            search.Email = "";
         } else {
-            search.Email1 = $scope.Email1;
+            search.Email = $scope.Email1;
         }
         if(!$scope.Phone1){
-            search.Phone1 = "";
+            search.HomePhone = "";
         } else {
-            search.Phone1 = $scope.Phone1;
+            search.HomePhone = $scope.Phone1;
         }
         if(!$scope.City){
             search.City = "";
@@ -121,7 +126,7 @@ angular.module('treeMdbApp')
             search.Random = Math.random();
             var searchJSON = search;
 
-            $scope.go("/" + obj_to_query(searchJSON));
+            $scope.go("/advsearch" + obj_to_query(searchJSON));
             //$scope.contacts = ContactSearch.search({ "query": "submitq", "FirstName": FirstName, "LastName": LastName, "Address1": Address1, "Email1": Email1, "Phone1": Phone1, "City": City });
         }
 
