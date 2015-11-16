@@ -20,6 +20,9 @@ angular.module('treeMdbApp')
         $location.url(requrl);
     }
 
+    var urlvars = $location.search();
+    $scope.urlvars = urlvars;
+
     $scope.user = {};
     $scope.user.Absolute = "0";
     $scope.user.YMT = "";
@@ -31,6 +34,30 @@ angular.module('treeMdbApp')
     $scope.user.Volunteer = "";
     $scope.user.Small = "";
     $scope.user.Tall = "";
+
+    if(!($scope.urlvars.query === "submitq")){
+        $scope.contacts = {contacts: [{"FirstName": "Please submit a coarse search first"}]};
+    } else {
+        $scope.FirstName = $scope.urlvars.FirstName;
+        $scope.LastName = $scope.urlvars.LastName;
+        $scope.Company = $scope.urlvars.Company;
+        $scope.Address1 = $scope.urlvars.Address1;
+        $scope.Email1 = $scope.urlvars.Email1;
+        $scope.Phone1 = $scope.urlvars.Phone1;
+        $scope.City = $scope.urlvars.City;
+        $scope.user.Absolute = $scope.urlvars.Absolute;
+        $scope.user.YMT = $scope.urlvars.YMT;
+        $scope.user.YouthDirector = $scope.urlvars.YouthDirector;
+        $scope.user.Board = $scope.urlvars.Board;
+        $scope.user.APT = $scope.urlvars.APT;
+        $scope.user.TreeGuardian = $scope.urlvars.TreeGuardian;
+        $scope.user.FosterCare = $scope.urlvars.FosterCare;
+        $scope.user.Volunteer = $scope.urlvars.Volunteer;
+        $scope.user.Small = $scope.urlvars.Small;
+        $scope.user.Tall = $scope.urlvars.Tall;
+
+        $scope.contacts = ContactSearch.search($scope.urlvars);
+    }
 
     $scope.search = function() {
 

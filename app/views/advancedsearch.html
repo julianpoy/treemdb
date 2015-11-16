@@ -35,3 +35,22 @@
       <br />
       <input ng-model="searchText" class="main-searchfield">
     </div>
+    <div class="well">
+      <h4>Search Results:</h4>
+      <table cellspacing="0">
+        <tr class="first">
+          <th ng-click="changeSorting('LastName')">First Name &#x25BC;</th>
+          <th ng-click="changeSorting('LastName')">Last Name &#x25BC;</th>
+           <th ng-click="changeSorting('Company')">Company &#x25BC;</th>
+          <th ng-click="updateResults('email1')">H Email &#x25BC;</th>
+          <th ng-click="updateResults('phone')">H Phone &#x25BC;</th>
+        </tr>
+        <tr ng-repeat="contact in contacts.contacts|orderBy:sort.column:sort.descending | filter:searchText | limitTo:limitquantity" ng-click="go('/contact?id={{contact.id}}')">
+          <td>{{contact.FirstName}}</td>
+          <td>{{contact.LastName}}</td>
+          <td>{{contact.Company}}</td>
+          <td>{{contact.hemail}}</td>
+          <td>{{contact.hphone}} &#8641;</td>
+        </tr>
+      </table>
+    </div>
