@@ -122,7 +122,9 @@ angular.module('treeMdbApp')
         search.Tall = $scope.user.Tall;
 
         search.query = "submitq";
-        if ($scope.FirstName || $scope.LastName || $scope.Company || $scope.Address1 || $scope.Email1 || $scope.Phone1 || $scope.City){
+        if ($scope.FirstName || $scope.LastName || $scope.Company || $scope.Address1 || $scope.Email1 || $scope.Phone1 || $scope.City ||
+            $scope.user.YMT || $scope.user.YouthDirector || $scope.user.Board || $scope.user.APT || $scope.user.TreeGuardian || $scope.user.FosterCare ||
+            $scope.user.Volunteer || $scope.user.Small || $scope.user.Tall){
             search.Random = Math.random();
             var searchJSON = search;
 
