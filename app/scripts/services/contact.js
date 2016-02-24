@@ -3,7 +3,7 @@
 angular.module('treeMdbApp')
   .factory('Contact', ['$resource', function($resource) {
 
-    return $resource( apiBase + 'contacts/:Id', 
+    return $resource( apiBase + 'index.php/contacts/:Id', 
         { Id: '@Id' }, { 
             query: { 
                 method: 'GET', 
@@ -38,7 +38,7 @@ angular.module('treeMdbApp')
 angular.module('treeMdbApp')
   .factory('ContactSearch', ['$resource', function($resource) {
 
-    return $resource( apiBase + 'contacts/search', 
+    return $resource( apiBase + 'index.php/contacts/search', 
         {}, { 
             search: { 
                 method: 'POST', 
@@ -52,7 +52,7 @@ angular.module('treeMdbApp')
 angular.module('treeMdbApp')
   .factory('Donations', ['$resource', function($resource) {
 
-    return $resource( apiBase + 'donations/:Id', 
+    return $resource( apiBase + 'donations.php/donations/:Id', 
         { Id: '@Id' }, { 
             get: { 
                 method: 'GET', 
